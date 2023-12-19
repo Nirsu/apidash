@@ -83,12 +83,13 @@ class _PreviewerState extends State<Previewer> {
       );
     }
     if (widget.type == kTypeVideo) {
-      return VideoPlayer(
-        bytes: widget.bytes,
-        errorBuilder: (context, error, stacktrace) {
-          return const ErrorMessage(message: kVideoError);
-        },
-      );
+      try {
+        return VideoPlayer(
+          bytes: widget.bytes,
+        );
+      } catch (_) {
+        return const ErrorMessage(message: kVideoError);
+      }
     }
     String message = widget.hasRaw
         ? "$kMimeTypeRawRaiseIssueStart${widget.type}/${widget.subtype}$kMimeTypeRaiseIssue"
