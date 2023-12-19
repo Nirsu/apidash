@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:apidash/widgets/video_player.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
@@ -82,7 +83,12 @@ class _PreviewerState extends State<Previewer> {
       );
     }
     if (widget.type == kTypeVideo) {
-      // TODO: Video Player
+      return VideoPlayer(
+        bytes: widget.bytes,
+        errorBuilder: (context, error, stacktrace) {
+          return const ErrorMessage(message: kVideoError);
+        },
+      );
     }
     String message = widget.hasRaw
         ? "$kMimeTypeRawRaiseIssueStart${widget.type}/${widget.subtype}$kMimeTypeRaiseIssue"

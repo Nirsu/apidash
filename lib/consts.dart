@@ -348,7 +348,7 @@ const Map<String, Map<String, List<ResponseBodyView>>>
     kSubTypeDefaultViewOptions: kPreviewBodyViewOptions,
   },
   kTypeVideo: {
-    kSubTypeDefaultViewOptions: kNoBodyViewOptions,
+    kSubTypeDefaultViewOptions: kPreviewBodyViewOptions,
   },
   kTypeText: {
     kSubTypeDefaultViewOptions: kRawBodyViewOptions,
@@ -467,6 +467,9 @@ const kPdfError =
 
 const kAudioError =
     "There seems to be an issue playing this audio. Please raise an issue in API Dash GitHub repo so that we can resolve it.";
+
+const kVideoError =
+    "There seems to be an issue playing this video. Please raise an issue in API Dash GitHub repo so that we can resolve it.";
 
 const kRaiseIssue =
     "\nPlease raise an issue in API Dash GitHub repo so that we can resolve it.";
