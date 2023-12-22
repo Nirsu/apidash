@@ -59,6 +59,9 @@ class _VideoPlayerState extends State<VideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Video(controller: controller);
+    return Video(
+      controller: controller,
+      fill: Colors.transparent,
+    );
   }
 }
